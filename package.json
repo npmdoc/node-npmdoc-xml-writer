@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"xml-writer",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "xml-writer",
+    "description": "api documentation for [xml-writer (v1.7.0)](http://github.com/touv/node-xml-writer) [![npm package](https://img.shields.io/npm/v/npmdoc-xml-writer.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-xml-writer) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-xml-writer.svg)](https://travis-ci.org/npmdoc/node-npmdoc-xml-writer)",
     "devDependencies": {
-        "xml-writer": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
-        "utility2": "kaizhu256/node-utility2#alpha"
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "xml-writer": "*"
     },
-    "name":"npmdoc-xml-writer",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-xml-writer",
+    "keywords": [
+        "documentation",
+        "xml-writer"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_xml_writer.js",
+    "name": "npmdoc-xml-writer",
+    "nameAlias": "npmdoc_xml_writer",
+    "nameOriginal": "npmdoc-xml-writer",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-xml-writer"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
