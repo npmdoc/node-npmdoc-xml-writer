@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/touv/node-xml-writer"
-
-    >xml-writer (v1.7.0)</a>
+    <a href="http://github.com/touv/node-xml-writer">xml-writer (v1.7.0)</a>
 </h1>
 <h4>Native and full Javascript implementation of the classic XMLWriter class</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.xml-writer">module xml-writer</a><ol>
 
@@ -413,8 +406,8 @@
 
     this.name_regex = /[_:A-Za-z][-._:A-Za-z0-9]*/;
     this.indent = indent ? true : false;
-    this.indentString = this.indent &#x26;&#x26; typeof indent === &#x27;string&#x27; ? indent : &#x27;    &#x27;;
-    this.output = &#x27;&#x27;;
+    this.indentString = this.indent &amp;&amp; typeof indent === 'string' ? indent : '    ';
+    this.output = '';
     this.stack = [];
     this.tags = 0;
     this.attributes = 0;
@@ -422,14 +415,14 @@
     this.texts = 0;
     this.comment = 0;
     this.dtd = 0;
-    this.root = &#x27;&#x27;;
+    this.root = '';
     this.pi = 0;
     this.cdata = 0;
     this.started_write = false;
     this.writer;
-    this.writer_encoding = &#x27;UTF-8&#x27;;
+    this.writer_encoding = 'UTF-8';
 
-    if (typeof callback == &#x27;function&#x27;) {
+    if (typeof callback == 'function') {
         this.writer = callback;
     } else {
         this.writer = function (s, e) {
@@ -457,8 +450,8 @@
 
     this.name_regex = /[_:A-Za-z][-._:A-Za-z0-9]*/;
     this.indent = indent ? true : false;
-    this.indentString = this.indent &#x26;&#x26; typeof indent === &#x27;string&#x27; ? indent : &#x27;    &#x27;;
-    this.output = &#x27;&#x27;;
+    this.indentString = this.indent &amp;&amp; typeof indent === 'string' ? indent : '    ';
+    this.output = '';
     this.stack = [];
     this.tags = 0;
     this.attributes = 0;
@@ -466,14 +459,14 @@
     this.texts = 0;
     this.comment = 0;
     this.dtd = 0;
-    this.root = &#x27;&#x27;;
+    this.root = '';
     this.pi = 0;
     this.cdata = 0;
     this.started_write = false;
     this.writer;
-    this.writer_encoding = &#x27;UTF-8&#x27;;
+    this.writer_encoding = 'UTF-8';
 
-    if (typeof callback == &#x27;function&#x27;) {
+    if (typeof callback == 'function') {
         this.writer = callback;
     } else {
         this.writer = function (s, e) {
@@ -508,8 +501,8 @@
 
     this.name_regex = /[_:A-Za-z][-._:A-Za-z0-9]*/;
     this.indent = indent ? true : false;
-    this.indentString = this.indent &#x26;&#x26; typeof indent === &#x27;string&#x27; ? indent : &#x27;    &#x27;;
-    this.output = &#x27;&#x27;;
+    this.indentString = this.indent &amp;&amp; typeof indent === 'string' ? indent : '    ';
+    this.output = '';
     this.stack = [];
     this.tags = 0;
     this.attributes = 0;
@@ -517,14 +510,14 @@
     this.texts = 0;
     this.comment = 0;
     this.dtd = 0;
-    this.root = &#x27;&#x27;;
+    this.root = '';
     this.pi = 0;
     this.cdata = 0;
     this.started_write = false;
     this.writer;
-    this.writer_encoding = &#x27;UTF-8&#x27;;
+    this.writer_encoding = 'UTF-8';
 
-    if (typeof callback == &#x27;function&#x27;) {
+    if (typeof callback == 'function') {
         this.writer = callback;
     } else {
         this.writer = function (s, e) {
@@ -553,7 +546,7 @@
     if (!this.attribute) return this;
     this.attribute = 0;
     this.texts = 0;
-    this.write(&#x27;&#x22;&#x27;);
+    this.write('"');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -574,7 +567,7 @@
     this.attributes = 0;
     this.attribute = 0;
     this.texts = 0;
-    this.write(&#x27;&#x3e;&#x27;);
+    this.write('&gt;');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -591,7 +584,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">endCData = function () {
     if (!this.cdata) return this;
-    this.write(&#x27;]]&#x3e;&#x27;);
+    this.write(']]&gt;');
     this.cdata = 0;
     return this;
 }</pre></li>
@@ -609,7 +602,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">endComment = function () {
     if (!this.comment) return this;
-    this.write(&#x27;--&#x3e;&#x27;);
+    this.write('--&gt;');
     this.comment = 0;
     return this;
 }</pre></li>
@@ -627,7 +620,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">endDocType = function () {
     if (!this.dtd) return this;
-    this.write(&#x27;&#x3e;&#x27;);
+    this.write('&gt;');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -648,20 +641,20 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
 	xw.startDocument();
-	xw.startElement(&#x27;root&#x27;);
-	xw.writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.text(&#x27;Some content&#x27;);
+	xw.startElement('root');
+	xw.writeAttribute('foo', 'value');
+	xw.text('Some content');
 	xw.<span class="apidocCodeKeywordSpan">endDocument</span>();
 
 	console.log(xw.toString());
 ```
 Output:
 
-	&#x3c;?xml version=&#x22;1.0&#x22;?&#x3e;
-	&#x3c;root foo=&#x22;value&#x22;&#x3e;Some content&#x3c;/root&#x3e;
+	&lt;?xml version="1.0"?&gt;
+	&lt;root foo="value"&gt;Some content&lt;/root&gt;
 ...</pre></li>
     </ul>
 
@@ -677,16 +670,16 @@ Output:
     <li>description and source-code<pre class="apidocCodePre">endElement = function () {
     if (!this.tags) return this;
     var t = this.stack.pop();
-    if (this.attributes &#x3e; 0) {
+    if (this.attributes &gt; 0) {
         if (this.attribute) {
             if (this.texts) this.endAttribute();
             this.endAttribute();
         }
-        this.write(&#x27;/&#x27;);
+        this.write('/');
         this.endAttributes();
     } else {
         if (t.containsTag) this.indenter();
-        this.write(&#x27;&#x3c;/&#x27;, t.name, &#x27;&#x3e;&#x27;);
+        this.write('&lt;/', t.name, '&gt;');
     }
     --this.tags;
     this.texts = 0;
@@ -706,7 +699,7 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">endPI = function () {
     if (!this.pi) return this;
-    this.write(&#x27;?&#x3e;&#x27;);
+    this.write('?&gt;');
     this.pi = 0;
     return this;
 }</pre></li>
@@ -723,7 +716,7 @@ Output:
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">flush = function () {
-    for (var i = this.tags; i &#x3e; 0; i--) {
+    for (var i = this.tags; i &gt; 0; i--) {
         this.endElement();
     }
     this.tags = 0;
@@ -742,8 +735,8 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">indenter = function () {
   if (this.indent) {
-    this.write(&#x27;\n&#x27;);
-    for (var i = 1; i &#x3c; this.tags; i++) {
+    this.write('\n');
+    for (var i = 1; i &lt; this.tags; i++) {
       this.write(this.indentString);
     }
   }
@@ -762,11 +755,11 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">startAttribute = function (name) {
     name = strval(name);
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (!this.attributes &#x26;&#x26; !this.pi) return this;
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (!this.attributes &amp;&amp; !this.pi) return this;
     if (this.attribute) return this;
     this.attribute = 1;
-    this.write(&#x27; &#x27;, name, &#x27;=&#x22;&#x27;);
+    this.write(' ', name, '="');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -785,12 +778,12 @@ Output:
     prefix = strval(prefix);
     name = strval(name);
 
-    if (!prefix.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (!this.attributes &#x26;&#x26; !this.pi) return this;
+    if (!prefix.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (!this.attributes &amp;&amp; !this.pi) return this;
     if (this.attribute) return this;
     this.attribute = 1;
-    this.write(&#x27; &#x27;, prefix + &#x27;:&#x27; + name, &#x27;=&#x22;&#x27;);
+    this.write(' ', prefix + ':' + name, '="');
     return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -825,7 +818,7 @@ Output:
     if (this.cdata) return this;
     if (this.attributes) this.endAttributes();
     this.indenter();
-    this.write(&#x27;&#x3c;![CDATA[&#x27;);
+    this.write('&lt;![CDATA[');
     this.cdata = 1;
     this.started_write = true;
     return this;
@@ -846,7 +839,7 @@ Output:
     if (this.comment) return this;
     if (this.attributes) this.endAttributes();
     this.indenter();
-    this.write(&#x27;&#x3c;!--&#x27;);
+    this.write('&lt;!--');
     this.comment = 1;
     this.started_write = true;
     return this;
@@ -871,17 +864,17 @@ Output:
     sysid = sysid ? strval(sysid) : sysid;
     subset = subset ? strval(subset) : subset;
 
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (pubid &#x26;&#x26; !pubid.match(/^[\w\-][\w\s\-\/\+\:\.]*/)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (sysid &#x26;&#x26; !sysid.match(/^[\w\.][\w\-\/\\\:\.]*/)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (subset &#x26;&#x26; !subset.match(/[\w\s\&#x3c;\&#x3e;\+\.\!\#\-\?\*\,\(\)\|]*/)) throw Error(&#x27;Invalid Parameter&#x27;);
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (pubid &amp;&amp; !pubid.match(/^[\w\-][\w\s\-\/\+\:\.]*/)) throw Error('Invalid Parameter');
+    if (sysid &amp;&amp; !sysid.match(/^[\w\.][\w\-\/\\\:\.]*/)) throw Error('Invalid Parameter');
+    if (subset &amp;&amp; !subset.match(/[\w\s\&lt;\&gt;\+\.\!\#\-\?\*\,\(\)\|]*/)) throw Error('Invalid Parameter');
 
-    pubid = pubid ? &#x27; PUBLIC &#x22;&#x27; + pubid + &#x27;&#x22;&#x27; : (sysid) ? &#x27; SYSTEM&#x27; : &#x27;&#x27;;
-    sysid = sysid ? &#x27; &#x22;&#x27; + sysid + &#x27;&#x22;&#x27; : &#x27;&#x27;;
-    subset = subset ? &#x27; [&#x27; + subset + &#x27;]&#x27;: &#x27;&#x27;;
+    pubid = pubid ? ' PUBLIC "' + pubid + '"' : (sysid) ? ' SYSTEM' : '';
+    sysid = sysid ? ' "' + sysid + '"' : '';
+    subset = subset ? ' [' + subset + ']': '';
 
     if (this.started_write) this.indenter();
-    this.write(&#x27;&#x3c;!DOCTYPE &#x27;, name, pubid, sysid, subset);
+    this.write('&lt;!DOCTYPE ', name, pubid, sysid, subset);
     this.root = name;
     this.dtd = 1;
     this.started_write = true;
@@ -902,24 +895,24 @@ Output:
     <li>description and source-code<pre class="apidocCodePre">startDocument = function (version, encoding, standalone) {
     if (this.tags || this.attributes) return this;
 
-    this.startPI(&#x27;xml&#x27;);
-    this.startAttribute(&#x27;version&#x27;);
-    this.text(typeof version == &#x22;string&#x22; ? version : &#x22;1.0&#x22;);
+    this.startPI('xml');
+    this.startAttribute('version');
+    this.text(typeof version == "string" ? version : "1.0");
     this.endAttribute();
-    if (typeof encoding == &#x22;string&#x22;) {
-        this.startAttribute(&#x27;encoding&#x27;);
+    if (typeof encoding == "string") {
+        this.startAttribute('encoding');
         this.text(encoding);
         this.endAttribute();
         this.writer_encoding = encoding;
     }
     if (standalone) {
-        this.startAttribute(&#x27;standalone&#x27;);
-        this.text(&#x22;yes&#x22;);
+        this.startAttribute('standalone');
+        this.text("yes");
         this.endAttribute();
     }
     this.endPI();
     if (!this.indent) {
-      this.write(&#x27;\n&#x27;);
+      this.write('\n');
     }
     return this;
 }</pre></li>
@@ -929,12 +922,12 @@ Output:
 
 ## Basic
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
 	xw.<span class="apidocCodeKeywordSpan">startDocument</span>();
-	xw.startElement(&#x27;root&#x27;);
-	xw.writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.text(&#x27;Some content&#x27;);
+	xw.startElement('root');
+	xw.writeAttribute('foo', 'value');
+	xw.text('Some content');
 	xw.endDocument();
 
 	console.log(xw.toString());
@@ -953,12 +946,12 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">startElement = function (name) {
     name = strval(name);
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (this.tags === 0 &#x26;&#x26; this.root &#x26;&#x26; this.root !== name) throw Error(&#x27;Invalid Parameter&#x27;);
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (this.tags === 0 &amp;&amp; this.root &amp;&amp; this.root !== name) throw Error('Invalid Parameter');
     if (this.attributes) this.endAttributes();
     ++this.tags;
     this.texts = 0;
-    if (this.stack.length &#x3e; 0)
+    if (this.stack.length &gt; 0)
       this.stack[this.stack.length-1].containsTag = true;
 
     this.stack.push({
@@ -966,7 +959,7 @@ Output:
         tags: this.tags
     });
     if (this.started_write) this.indenter();
-    this.write(&#x27;&#x3c;&#x27;, name);
+    this.write('&lt;', name);
     this.startAttributes();
     this.started_write = true;
     return this;
@@ -976,12 +969,12 @@ Output:
 
 ## Basic
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
 	xw.startDocument();
-	xw.<span class="apidocCodeKeywordSpan">startElement</span>(&#x27;root&#x27;);
-	xw.writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.text(&#x27;Some content&#x27;);
+	xw.<span class="apidocCodeKeywordSpan">startElement</span>('root');
+	xw.writeAttribute('foo', 'value');
+	xw.text('Some content');
 	xw.endDocument();
 
 	console.log(xw.toString());
@@ -1003,20 +996,20 @@ Output:
     prefix = strval(prefix);
     name = strval(name);
 
-    if (!prefix.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
+    if (!prefix.match(this.name_regex)) throw Error('Invalid Parameter');
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
     if (this.attributes) this.endAttributes();
     ++this.tags;
     this.texts = 0;
-    if (this.stack.length &#x3e; 0)
+    if (this.stack.length &gt; 0)
       this.stack[this.stack.length-1].containsTag = true;
 
     this.stack.push({
-        name: prefix + &#x27;:&#x27; + name,
+        name: prefix + ':' + name,
         tags: this.tags
     });
     if (this.started_write) this.indenter();
-    this.write(&#x27;&#x3c;&#x27;, prefix + &#x27;:&#x27; + name);
+    this.write('&lt;', prefix + ':' + name);
     this.startAttributes();
     this.started_write = true;
     return this;
@@ -1035,11 +1028,11 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">startPI = function (name) {
     name = strval(name);
-    if (!name.match(this.name_regex)) throw Error(&#x27;Invalid Parameter&#x27;);
+    if (!name.match(this.name_regex)) throw Error('Invalid Parameter');
     if (this.pi) return this;
     if (this.attributes) this.endAttributes();
     if (this.started_write) this.indenter();
-    this.write(&#x27;&#x3c;?&#x27;, name);
+    this.write('&lt;?', name);
     this.pi = 1;
     this.started_write = true;
     return this;
@@ -1058,26 +1051,26 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">text = function (content) {
     content = strval(content);
-    if (!this.tags &#x26;&#x26; !this.comment &#x26;&#x26; !this.pi &#x26;&#x26; !this.cdata) return this;
-    if (this.attributes &#x26;&#x26; this.attribute) {
+    if (!this.tags &amp;&amp; !this.comment &amp;&amp; !this.pi &amp;&amp; !this.cdata) return this;
+    if (this.attributes &amp;&amp; this.attribute) {
         ++this.texts;
         this.write(content
-                   .replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;)
-                   .replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;)
-                   .replace(/&#x22;/g, &#x27;&#x26;quot;&#x27;)
-                   .replace(/\t/g, &#x27;&#x26;#x9;&#x27;)
-                   .replace(/\n/g, &#x27;&#x26;#xA;&#x27;)
-                   .replace(/\r/g, &#x27;&#x26;#xD;&#x27;)
+                   .replace(/&amp;/g, '&amp;amp;')
+                   .replace(/&lt;/g, '&amp;lt;')
+                   .replace(/"/g, '&amp;quot;')
+                   .replace(/\t/g, '&amp;#x9;')
+                   .replace(/\n/g, '&amp;#xA;')
+                   .replace(/\r/g, '&amp;#xD;')
                   );
         return this;
-    } else if (this.attributes &#x26;&#x26; !this.attribute) {
+    } else if (this.attributes &amp;&amp; !this.attribute) {
         this.endAttributes();
     }
     if (this.comment || this.cdata) {
         this.write(content);
     }
     else {
-      this.write(content.replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;).replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;).replace(/&#x3e;/g, &#x27;&#x26;gt;&#x27;));
+      this.write(content.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;'));
     }
     ++this.texts;
     this.started_write = true;
@@ -1086,19 +1079,19 @@ Output:
     <li>example usage<pre class="apidocCodePre">...
 ## Basic
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
 	xw.startDocument();
-	xw.startElement(&#x27;root&#x27;);
-	xw.writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.<span class="apidocCodeKeywordSpan">text</span>(&#x27;Some content&#x27;);
+	xw.startElement('root');
+	xw.writeAttribute('foo', 'value');
+	xw.<span class="apidocCodeKeywordSpan">text</span>('Some content');
 	xw.endDocument();
 
 	console.log(xw.toString());
 ```
 Output:
 
-	&#x3c;?xml version=&#x22;1.0&#x22;?&#x3e;
+	&lt;?xml version="1.0"?&gt;
 ...</pre></li>
     </ul>
 
@@ -1118,19 +1111,19 @@ Output:
     <li>example usage<pre class="apidocCodePre">...
 	xw = new XMLWriter;
 	xw.startDocument();
-	xw.startElement(&#x27;root&#x27;);
-	xw.writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.text(&#x27;Some content&#x27;);
+	xw.startElement('root');
+	xw.writeAttribute('foo', 'value');
+	xw.text('Some content');
 	xw.endDocument();
 
 	console.log(xw.<span class="apidocCodeKeywordSpan">toString</span>());
 ```
 Output:
 
-	&#x3c;?xml version=&#x22;1.0&#x22;?&#x3e;
-	&#x3c;root foo=&#x22;value&#x22;&#x3e;Some content&#x3c;/root&#x3e;
+	&lt;?xml version="1.0"?&gt;
+	&lt;root foo="value"&gt;Some content&lt;/root&gt;
 
-Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWriter(&#x27;\t&#x27;)`, for instance, if you want to
+Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWriter('\t')`, for instance, if you want to
  use a custom string for indentation.
 ...</pre></li>
     </ul>
@@ -1145,24 +1138,24 @@ Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWrit
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">write = function () {
-    for (var i = 0; i &#x3c; arguments.length; i++) {
+    for (var i = 0; i &lt; arguments.length; i++) {
         this.writer(arguments[i], this.writer_encoding);
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-	var XMLWriter = require(&#x27;xml-writer&#x27;),
-               fs = require(&#x27;fs&#x27;);
-	var ws = fs.createWriteStream(&#x27;/tmp/foo.xml&#x27;);
-	ws.on(&#x27;close&#x27;, function() {
-			console.log(fs.readFileSync(&#x27;/tmp/foo.xml&#x27;, &#x27;UTF-8&#x27;));
+	var XMLWriter = require('xml-writer'),
+               fs = require('fs');
+	var ws = fs.createWriteStream('/tmp/foo.xml');
+	ws.on('close', function() {
+			console.log(fs.readFileSync('/tmp/foo.xml', 'UTF-8'));
 	});
 	xw = new XMLWriter(false, function(string, encoding) {
 			ws.<span class="apidocCodeKeywordSpan">write</span>(string, encoding);
 	});
-	xw.startDocument(&#x27;1.0&#x27;, &#x27;UTF-8&#x27;).startElement(function() {
-		return &#x27;root&#x27;;
+	xw.startDocument('1.0', 'UTF-8').startElement(function() {
+		return 'root';
 	}).text(function() {
-		return &#x27;Some content&#x27;;
+		return 'Some content';
 	});
 	ws.end();
 ...</pre></li>
@@ -1178,7 +1171,7 @@ Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWrit
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">writeAttribute = function (name, content) {
-    if (typeof content == &#x27;function&#x27;) {
+    if (typeof content == 'function') {
       content = content();
     }
     if (isFalse(content)) {
@@ -1190,12 +1183,12 @@ Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWrit
 
 ## Basic
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
 	xw.startDocument();
-	xw.startElement(&#x27;root&#x27;);
-	xw.<span class="apidocCodeKeywordSpan">writeAttribute</span>(&#x27;foo&#x27;, &#x27;value&#x27;);
-	xw.text(&#x27;Some content&#x27;);
+	xw.startElement('root');
+	xw.<span class="apidocCodeKeywordSpan">writeAttribute</span>('foo', 'value');
+	xw.text('Some content');
 	xw.endDocument();
 
 	console.log(xw.toString());
@@ -1217,7 +1210,7 @@ Output:
     if (!content) {
         content = uri;
     }
-    if (typeof content == &#x27;function&#x27;) {
+    if (typeof content == 'function') {
       content = content();
     }
     if (isFalse(content)) {
@@ -1287,22 +1280,22 @@ Output:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWriter(&#x27;\t&#x27;)`, for instance, if you want to
+Tip: If you want your XML **indented** use `new XMLWriter(true)` or `new XMLWriter('\t')`, for instance, if you want to
  use a custom string for indentation.
 
 ## Chaining
 ```javascript
-	var XMLWriter = require(&#x27;xml-writer&#x27;);
+	var XMLWriter = require('xml-writer');
 	xw = new XMLWriter;
-	xw.startDocument().startElement(&#x27;root&#x27;).writeAttribute(&#x27;foo&#x27;, &#x27;value&#x27;).<span class="apidocCodeKeywordSpan
-">writeElement</span>(&#x27;tag&#x27;, &#x27;Some content&#x27;);
+	xw.startDocument().startElement('root').writeAttribute('foo', 'value').<span class="apidocCodeKeywordSpan
+">writeElement</span>('tag', 'Some content');
 
 	console.log(xw.toString());
 ```
 Output:
 
-	&#x3c;?xml version=&#x22;1.0&#x22;?&#x3e;
-	&#x3c;root foo=&#x22;value&#x22;&#x3e;&#x3c;tag&#x3e;Some content&#x3c;/tag&#x3e;&#x3c;/root&#x3e;
+	&lt;?xml version="1.0"?&gt;
+	&lt;root foo="value"&gt;&lt;tag&gt;Some content&lt;/tag&gt;&lt;/root&gt;
 ...</pre></li>
     </ul>
 
@@ -1350,12 +1343,12 @@ Output:
     <ul>
     <li>description and source-code<pre class="apidocCodePre">writeRaw = function (content) {
     content = strval(content);
-    if (!this.tags &#x26;&#x26; !this.comment &#x26;&#x26; !this.pi &#x26;&#x26; !this.cdata) return this;
-    if (this.attributes &#x26;&#x26; this.attribute) {
+    if (!this.tags &amp;&amp; !this.comment &amp;&amp; !this.pi &amp;&amp; !this.cdata) return this;
+    if (this.attributes &amp;&amp; this.attribute) {
         ++this.texts;
-        this.write(content.replace(&#x27;&#x26;&#x27;, &#x27;&#x26;amp;&#x27;).replace(&#x27;&#x22;&#x27;, &#x27;&#x26;quot;&#x27;));
+        this.write(content.replace('&amp;', '&amp;amp;').replace('"', '&amp;quot;'));
         return this;
-    } else if (this.attributes &#x26;&#x26; !this.attribute) {
+    } else if (this.attributes &amp;&amp; !this.attribute) {
         this.endAttributes();
     }
     ++this.texts;
@@ -1375,3 +1368,4 @@ Output:
     ]
 </div>
 </div>
+</body></html>
